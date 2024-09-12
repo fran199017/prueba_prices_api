@@ -19,7 +19,7 @@ OpenAPI para la realización de pruebas y manejo de excepciones.
 búsquedas con cualquier filtro que el usuario desease asignar y no solo lo que pide la prueba.
 - He considerado omitir la lógica de servicio de la entity Brand, para no repetir información innecesaria para la prueba.
 ### Pautas a seguir
-- Hacer git clone https://github.com/fran199017/Prueba_Inditex_API.git
+- Hacer git clone [https://github.com/fran199017/Prueba_Inditex_API.git](https://github.com/fran199017/prueba_prices_api.git)
 - Abrir el proyecto en la raiz ../pruebainditex
 - Hacer mvn clean package
 - mvn clean test ( para ver el coverage de Jacoco situado en target/site/jacoco/index.html)
