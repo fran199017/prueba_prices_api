@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 30
+    accesslog:
+      enabled: false
+    protocol-header: x-forwarded-proto
+
+debug: true
+
+spring:
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url : jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=CREATE SCHEMA IF NOT EXISTS testdb
+    driverClassName: org.h2.Driver
+    name:
+    username: sa
+    password:
+    hikari:
+      auto-commit: false
+  redis:
+    host: localhost
+    port: 6379
+
+flyway:
+  baseline-on-migrate: true
+
+services:
+  statusMap:
+    1: Error inesperado del sistema
+    2: Error de formateo de fechas. Comprueba que la fecha tiene el formato yyyyMMddHHmmss
+    3: Debes aplicar un filtro para cada campo
+    4: Filtro no encontrado. Los filtros permitidos son eq, neq, gt, lt y bw (solo para las fechas)
+    5: La brand seleccionada no existe. Comprueba los datos de entrada
+    6: Error JsonProcessingException en RedisService
+    7: Precio no encontrado
